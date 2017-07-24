@@ -87,9 +87,13 @@ type variableProperties struct {
 			Cflags   []string
 			Cppflags []string
 		}
+
 		// include validus variables
 		*android.Product_variables
 
+		Has_legacy_camera_hal1 struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -160,6 +164,9 @@ type productVariables struct {
 
 	// include validus variables
 	*android.ProductVariables
+
+	Has_legacy_camera_hal1     *bool `json:",omitempty"`
+
 }
 
 func boolPtr(v bool) *bool {
