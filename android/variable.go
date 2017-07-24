@@ -94,6 +94,10 @@ type variableProperties struct {
 		Has_legacy_camera_hal1 struct {
 			Cflags []string
 		}
+
+		Uses_media_extensions struct {
+			Cflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -161,12 +165,11 @@ type productVariables struct {
 	Override_rs_driver *string `json:",omitempty"`
 
 	Libart_img_base            *string `json:",omitempty"`
+	Has_legacy_camera_hal1     *bool `json:",omitempty"`
+	Uses_media_extensions      *bool `json:",omitempty"`
 
 	// include validus variables
 	*android.ProductVariables
-
-	Has_legacy_camera_hal1     *bool `json:",omitempty"`
-
 }
 
 func boolPtr(v bool) *bool {
