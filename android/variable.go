@@ -156,6 +156,8 @@ type productVariables struct {
 
 	Override_rs_driver *string `json:",omitempty"`
 
+	Libart_img_base            *string `json:",omitempty"`
+
 	// include validus variables
 	*android.ProductVariables
 }
